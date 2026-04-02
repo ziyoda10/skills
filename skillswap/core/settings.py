@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'drf_spectacular',
+     'django_extensions',
 
     # Sizning custom applaringiz
     'users',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'chat',
     'reviews',
     "skills_sessions"
+
 ]
 
 
