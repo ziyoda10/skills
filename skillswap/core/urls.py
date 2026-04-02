@@ -18,6 +18,7 @@ urlpatterns = [
     path('api/auth/', include('users.urls')),
     path('api/match/', include('match.urls')),  
     path('api/chat/', include('chat.urls')),path('api/reviews/', include('reviews.urls')),
+    path('api/auth/', include('users.urls')),
 
 
     # Keyinroq qo'shish uchun
