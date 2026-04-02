@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',      # Bu Django built-in, uni o'chirma!
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_spectacular',
 
     # Sizning custom applaringiz
     'users',
@@ -52,9 +53,10 @@ AUTH_USER_MODEL = 'users.User'
 
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
+    "DEFAULT_AUTHENTICATION_CLASSES": 
+    "rest_framework_simplejwt.authentication.JWTAuthentication",
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    
 }
 
 MIDDLEWARE = [
