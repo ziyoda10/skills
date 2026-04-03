@@ -38,3 +38,27 @@ class RegisterView(APIView):
 
         user = User.objects.create_user(username=username, password=password)
         return Response({"id": user.id, "username": user.username, "message": "Muvaffaqiyatli ro'yxatdan o'tdingiz!"}, status=status.HTTP_201_CREATED)
+    
+from rest_framework.permissions import IsAuthenticated
+
+# class ProfileView(APIView):
+#     permission_classes = [IsAuthenticated]
+
+#     def get(self, request):
+#         return Response({
+#             "username": request.user.username,
+#             "id": request.user.id
+#         })
+
+
+from rest_framework.permissions import IsAuthenticated
+
+class ProfileView(APIView):
+    permission_classes = [IsAuthenticated] # Faqat login qilganlar ko'ra oladi
+
+    def get(self, request):
+        return Response({
+            "id": request.user.id,
+            "username": request.user.username,
+            "message": "Bu sizning profilingiz"
+        })
